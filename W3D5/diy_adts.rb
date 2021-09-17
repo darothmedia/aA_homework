@@ -50,7 +50,7 @@ end
 
 class Map
   def initialize
-    @map = Array.new(1) {Array.new(2)}
+    @map = []
     @i = 0
     @key = @map[@i][0]
     @value = @map[@i][1]
