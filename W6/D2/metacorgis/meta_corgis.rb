@@ -111,15 +111,14 @@ class MetaCorgiSnacks
   end
 
   def method_missing(name, *args)
-    results = ''
-    args.each do |arg|
-      method = "get_" + "#{name}" + "info"
-      results += method
-      res = @snackbox.method(@box_id)
-      result = "#{name}: #{arg}: #{res}"
-      tastiness > 30 ? results += "* #{result}" : results += result
+    infom = ("get_" + "#{name}" + "_info").to_sym
+    tastinessm = ("get_" + "#{name}" + "_tastiness").to_sym
+    def info 
+      send(infom)
     end
-    results
+    tastiness = @snack_box.tastinessm(@box_id)
+    results = "#{name}: #{info}: #{tastiness}"
+    tastiness > 30 ? "* #{result}" : result
   end
 
 
