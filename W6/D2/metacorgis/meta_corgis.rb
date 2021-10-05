@@ -79,6 +79,7 @@ class CorgiSnacks
     @box_id = box_id
   end
 
+
   def bone
     info = @snack_box.get_bone_info(@box_id)
     tastiness = @snack_box.get_bone_tastiness(@box_id)
@@ -110,7 +111,15 @@ class MetaCorgiSnacks
   end
 
   def method_missing(name, *args)
-    # Your code goes here...
+    results = ''
+    args.each do |arg|
+      method = "get_" + "#{name}" + "info"
+      results += method
+      res = @snackbox.method(@box_id)
+      result = "#{name}: #{arg}: #{res}"
+      tastiness > 30 ? results += "* #{result}" : results += result
+    end
+    results
   end
 
 
