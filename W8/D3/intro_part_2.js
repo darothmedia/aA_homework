@@ -29,6 +29,11 @@ Elephant.prototype.addTrick = function(trick) {
   console.log(this.tricks)
 }
 
+Elephant.prototype.play = function() {
+  let i = Math.floor(Math.random() * (this.tricks.length));
+  console.log(this.name + ' is ' + this.tricks[i] + '!')
+}
+
 let ellie = new Elephant("Ellie", 42, ['Snoring', 'Eating'])
 
 ellie.trumpet()
@@ -37,5 +42,6 @@ ellie.grow()
 ellie.grow()
 ellie.addTrick('Lazing')
 ellie.addTrick('Pooping')
+ellie.play()
 
 
