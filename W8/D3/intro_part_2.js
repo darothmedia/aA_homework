@@ -24,9 +24,18 @@ Elephant.prototype.grow = function() {
   console.log(this.height)
 }
 
+Elephant.prototype.addTrick = function(trick) {
+  this.tricks.push(trick)
+  console.log(this.tricks)
+}
+
 let ellie = new Elephant("Ellie", 42, ['Snoring', 'Eating'])
 
 ellie.trumpet()
 ellie.grow()
 ellie.grow()
 ellie.grow()
+ellie.addTrick('Lazing')
+ellie.addTrick('Pooping')
+
+
