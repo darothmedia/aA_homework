@@ -20,6 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- your code here!
 
+  const addd = document.getElementById("sub");
+  addd.addEventListener('submit', event => {
+
+
+  })
+
+
+
 
 
   // adding new photos
