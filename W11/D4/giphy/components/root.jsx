@@ -2,3 +2,14 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import GiphysSearchContainer from './giphys_search_container';
+import App from './app.jsx'
+
+const Root = ({ store }) => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )
+}
+
+export default Root
