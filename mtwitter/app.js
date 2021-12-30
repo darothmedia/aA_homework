@@ -9,7 +9,6 @@ mongoose
   .catch(err => console.log(err))
 
 app.get("/", (req, res) => {
-  debugger
   res.send("Hello a/A!");
 });
 
