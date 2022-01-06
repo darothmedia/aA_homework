@@ -1,20 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs')
-const User = require('../../models/User')
+const bcrypt = require('bcryptjs');
+const User = require('../../models/User.js');
 
 router.get("/test", (req, res) => {
   res.json({ msg: "This is the user route" });
 });
 
 router.post('/register', (req, res) => {
-  User.findOne({username: req.body.username})
+  console.log(req)
+  User.findOne({email: req.body.email})
     .then(user => {
       if (user) {
-        return res.status(400).json({username: "This username has already been taken"})
+        return res.status(400).json({email: "This username has already been taken"})
       } else {
         const newUser = new User({
-          username: req.body.username,
+          handle: req.body.handle,
           email: req.body.email,
           password: req.body.password
         })
@@ -30,6 +31,6 @@ router.post('/register', (req, res) => {
         })
       }
     })
-})
+});
 
 module.exports = router;

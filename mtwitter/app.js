@@ -5,8 +5,7 @@ const db = require("./config/keys").mongoURI
 const users = require("./routes/api/users")
 const tweets = require("./routes/api/tweets")
 
-mongoose
-  .connect(db, { useNewUrlParser: true })
+mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to mongoDB"))
   .catch(err => console.log(err))
 
