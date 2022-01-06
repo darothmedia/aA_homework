@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/User.js');
 
 router.get("/test", (req, res) => {
+  console.log(req)
   res.json({ msg: "This is the user route" });
 });
 
