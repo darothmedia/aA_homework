@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/User.js');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys')
+const passport = require ('../../config/passport')
 
 router.get("/test", (req, res) => {
   console.log(req)
@@ -81,6 +82,10 @@ router.post('/login', (req, res) => {
           }
         })
     })
+})
+
+router.get('/current', (req, res) => {
+  res.json({msg: 'Success'});
 })
 
 module.exports = router;
