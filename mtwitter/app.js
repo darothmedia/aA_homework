@@ -11,6 +11,8 @@ mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to mongoDB"))
   .catch(err => console.log(err))
 
+// var routes = require('./routes/api/users')(passport)
+
 app.get("/", (req, res) => {
   res.send("Hello a/A!");
 });
